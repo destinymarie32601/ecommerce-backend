@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
+// /api/products endpoint
 
 // get all products
 router.get('/', (req, res) => {
-  // find all products
+  
   Product.findAll({
     attributes: [
       'id',
@@ -35,12 +35,11 @@ router.get('/', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   })
-  // be sure to include its associated Category and Tag data
 });
 
-// get one product
+// get one product by id
 router.get('/:id', (req, res) => {
-  // find a single product by its `id`
+  
   Product.findOne({
     where: {
       id: req.params.id
@@ -79,7 +78,6 @@ router.get('/:id', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   })
-  // be sure to include its associated Category and Tag data
 });
 
 // create new product
@@ -90,7 +88,6 @@ router.post('/', (req, res) => {
     tagIds: req.body.tag_id
   })
   .then((product) => {
-      // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
           return {
@@ -100,7 +97,6 @@ router.post('/', (req, res) => {
         });
         return ProductTag.bulkCreate(productTagIdArr);
       }
-      // if no product tags, just respond
       res.status(200).json(product);
     })
     .then((productTagIds) => res.status(200).json(productTagIds))
@@ -110,9 +106,8 @@ router.post('/', (req, res) => {
     });
 });
 
-// update product
+// update product by id
 router.put('/:id', (req, res) => {
-  // update product data
   Product.update(req.body, {
     where: {
       id: req.params.id,
@@ -162,11 +157,11 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(ProductData => {
-    if (!productData) {
+    if (!ProductData) {
       res.status(404).json({message: 'This product ID does not exist'});
       return;
     }
-    res.json(productData);
+    res.json(ProductData);
   })
   .catch(err => {
     console.log(err);
