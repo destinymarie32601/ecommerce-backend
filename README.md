@@ -13,7 +13,7 @@ Open integrated terminal from the server.js, type in MySQL credentials. Run npm 
 Walkthrough Video: 
 https://drive.google.com/file/d/1zfypBZ1_ankWQFo_76eaqDNgWCE6ZltP/view
 
-Github: https://github.com/destinymarie32601?tab=repositories&q=ecom&type=&language=&sort=
+Github: https://github.com/destinymarie32601/ecommerce-backend 
 
 ## Contributions
 For this project, I referenced this GitHub Repo : https://github.com/gabriellapinto/e-commerce, for my routing files and models.
