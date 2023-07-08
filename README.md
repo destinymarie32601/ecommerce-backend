@@ -10,8 +10,9 @@ This project uses MySQL2 package, Express.js Api, Sequelize, and dotenv packages
 Open integrated terminal from the server.js, type in MySQL credentials. Run npm seed, cd back to the route and run npm start to run the port. Use insomnia to test the api routes.
 
 ## Links
-Walkthrough Video: 
-https://drive.google.com/file/d/1zfypBZ1_ankWQFo_76eaqDNgWCE6ZltP/view
+Walkthrough Video: https://drive.google.com/file/d/1Ig6AptKHbMDNrCLFBkHGAqjVSp8qvTUT/view
+
+
 
 Github: https://github.com/destinymarie32601/ecommerce-backend 
 
